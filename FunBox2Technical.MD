@@ -8,10 +8,6 @@ First run a Kali Linux Machine, PFSense 2, and the Funbox 2 box.
 
 Login on the Kali Linux Machine and launch a terminal
 
-## [----Key----]
-Lightblue Text indicates a detail such as a ran command or relevant important information 
-
-<span style="color:darkgreen">Dark green Text indicates command results
 ## \[----Tools Used----\]
 `nmap`</br>
 `ftp`</br>
@@ -55,7 +51,7 @@ this scan revealed the following services `FTP`, `SSH`, and `HTTP` running on th
 
 using this information at \[03/29/23 1:16:27\] i ran `ftp 192.168.10.6 -p 21` to access the relevant running FTP service logging in under the anonymous username
 
-upon logging on under the <span style="color:darkgrey">**anonymous** user account with no password i ran `ls -la` to retrieve the directory contents of the server which returned the following information
+upon logging on under the **anonymous** user account with no password i ran `ls -la` to retrieve the directory contents of the server which returned the following information
 
 
 > 229 Entering Extended Passive Mode (|||31812|)</br>
@@ -104,7 +100,7 @@ using this information i attempted to extract files from `tom.zip` using `unzip`
 > \[tom.zip\] id_rsa password: 
 > 
 
-with this information i used the command of `zip2john tom.zip >> tom.hash` to generate a <span style="color:darkgrey">**johntheripper**  crackable hash
+with this information i used the command of `zip2john tom.zip >> tom.hash` to generate a **johntheripper**  crackable hash
 
 doing the command `john tom.hash` at \[03/29/23 1:36:36\] revealed the following information including the password for the zip
 
@@ -188,4 +184,4 @@ due to the following newfound information i attempted the following command `sud
 with this found information i used `sudo -i` to launch a interative shell as the root user and was able to `cat flag.txt` to get the end goal output.
 
 ## \[----End Result Analysis----\]
-due to the improperly secured services on the host of `192.168.10.6` it is possible to find and abuse information from the service of `ftp` as the <span style ="color:darkgrey">**Anonymous** user account which requires no password to gain information and later a id_rsa key file. Through this it is possible to login to a user ssh account and by using `MySql` command logging find the relevant user password which has complete sudo access and gain root level access.
+due to the improperly secured services on the host of `192.168.10.6` it is possible to find and abuse information from the service of `ftp` as the **Anonymous** user account which requires no password to gain information and later a id_rsa key file. Through this it is possible to login to a user ssh account and by using `MySql` command logging find the relevant user password which has complete sudo access and gain root level access.
